@@ -1,0 +1,45 @@
+# Develop a sentinel-controlled-repetition script that 
+# prompts the user to input the miles driven and gallons used for each tankful. 
+# The script should calculate and display the miles per gallon obtained for each tankful.
+#  After processing all input information, the script should calculate and display the combined 
+# miles per gallon obtained for all tankfuls (that is, total miles driven divided by total gallons used).
+
+''' 
+script: MilesPerGallon
+action: calculates miles per gallon for each tankful, and total tankfuls
+author: Amaris Rojo
+date: 09/06/2024
+'''
+
+#intialization phase
+sumMiles = 0
+sumGal = 0
+sum = 0
+
+#processing phase
+#funtion for taking the input of miles driven and gallons used for each tankful(-1 to stop repetition)
+#set variables to type int
+miles = int(input("Please enter total amount of miles driven (Enter -1 to STOP): "))
+gallons = int(input("Enter the total amount of gallons used: "))
+
+#create sentinel-controlled-repetition script
+#calculate the sum for a single tank
+while miles != -1: 
+    sum = miles/gallons
+    sumMiles += miles
+    sumGal += gallons
+    print("The miles/gallon for this tank is", sum)
+    miles = int(input("Please enter total amount of miles driven (Enter -1 to STOP): "))
+    if miles == -1:
+       continue
+    gallons = int(input("Enter the total amount of gallons used: "))
+
+#termination phase
+#total average 
+if miles == -1:
+    average = sumMiles / sumGal
+    print("The overall average miles/gallon was:", average)
+else:
+    print('No value was entered')
+    
+
